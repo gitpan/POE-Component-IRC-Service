@@ -1,11 +1,15 @@
+Filter-CTCP-Hybrid.pm
 Filter-CTCP-P10.pm
+Filter-IRC-Hybrid.pm
 Filter-IRC-P10.pm
 MANIFEST
 Makefile.PL
 README
+Service-Hybrid.pm
 Service-P10.pm
 Service.pm
 install
 examples/README
 examples/LogServ-P10.pl
+examples/LogServ-Hyb.pl
 t/01_p10.t
