@@ -1909,7 +1909,6 @@ sub base64_to_decimal {
 
 1;
 __END__
-# POD should be next :)
 
 =head1 NAME
 
@@ -2188,9 +2187,9 @@ ignores you. No big deal.)
 
 =head2 Server initiated commands
 
-=over
-
 These are commands that come from the IRC Service itself and not from clients.
+
+=over
 
 =item account
 
@@ -2260,9 +2259,9 @@ $kernel->post( 'IRC-Service' => sl_server => "OM #LameNET +o ZaAAA" );
 
 =head2 Client initiated commands
 
-=over
-
 These are commands that come from clients on the IRC Service.
+
+=over
 
 =item ctcp and ctcpreply
 
@@ -2365,6 +2364,8 @@ listen for.
 
 The module will deal with automatically irc_p10_stats, irc_p10_version, irc_p10_whois and 
 irc_p10_ping. The module will also track all events relating to server joins, nicks and channels.
+
+=over
 
 =item Miscellaneous events
 

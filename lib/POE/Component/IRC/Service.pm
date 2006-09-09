@@ -10,12 +10,13 @@ package POE::Component::IRC::Service;
 
 # This is just a wrapper for the following modules
 
+use strict;
 use POE::Component::IRC::Service::P10;
 use POE::Component::IRC::Service::Hybrid;
 use Carp;
 use vars qw($VERSION);
 
-$VERSION = '0.9';
+$VERSION = '0.99';
 
 sub new {
   my ($package,$alias,$ircdtype) = splice @_, 0, 3;

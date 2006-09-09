@@ -1408,9 +1408,9 @@ ignores you. No big deal.)
 
 =head2 Server initiated commands
 
-=over
-
 These are commands that come from the IRC Service itself and not from clients.
+
+=over
 
 =item gline
 
@@ -1454,9 +1454,9 @@ $kernel->post( 'IRC-Service' => sl_server => "MODE #LameNET +o Lame" );
 
 =head2 Client initiated commands
 
-=over
-
 These are commands that come from clients on the IRC Service.
+
+=over
 
 =item ctcp and ctcpreply
 

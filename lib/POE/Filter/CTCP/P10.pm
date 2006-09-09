@@ -7,21 +7,20 @@
 # distribution for details.
 #
 
-package POE::Filter::CTCP::Hybrid;
+package POE::Filter::CTCP::P10;
 
-push (@INC,".");
 use strict;
 use Carp;
 use File::Basename ();
-use POE::Filter::IRC::Hybrid;
+use POE::Filter::IRC::P10;
 
 
-# Create a new, empty POE::Filter::CTCP object.
+# Create a new, empty POE::Filter::CTCP::P10 object.
 sub new {
   my $class = shift;
   my %args = @_;
 
-  my $self = { 'irc_filter' => POE::Filter::IRC::Hybrid->new() };
+  my $self = { 'irc_filter' => POE::Filter::IRC::P10->new() };
   bless $self, $class;
 }
 
@@ -73,7 +72,7 @@ sub get {
     }
 
     if ($text and @$text > 0) {
-      $line =~ /^(:\S+ +\w+ +\S+ +)/ or warn "What the heck? \"$line\"";
+      $line =~ /^(\S+ +\w+ +\S+ +)/ or warn "What the heck? \"$line\"";
       $text = $1 . ':' . join '', @$text;
       $text =~ s/\cP/^P/g;
       warn "CTCP: $text\n" if $self->{'debug'};
@@ -170,7 +169,7 @@ sub _ctcp_dequote {
 
   return unless $line =~ tr/\001//;
 
-  ($who, $type, $where, $msg) = ($line =~ /^:(\S+) +(\w+) +(\S+) +:?(.*)$/)
+  ($who, $type, $where, $msg) = ($line =~ /^(\S+) +(\w+) +(\S+) +:?(.*)$/)
     or return;
   @chunks = split /\001/, $msg;
   shift @chunks unless length $chunks[0]; # FIXME: Is this safe?
@@ -196,7 +195,7 @@ sub _ctcp_dequote {
   }
 
   # Is this a CTCP request or reply?
-  if ($type eq 'PRIVMSG') {
+  if ($type eq 'P') {
     $type = 'ctcp';
   } else {
     $type = 'ctcpreply';
@@ -212,17 +211,17 @@ __END__
 
 =head1 NAME
 
-POE::Filter::CTCP::Hybrid -- A POE-based parser for the IRC protocol.
+POE::Filter::CTCP::P10 -- A POE-based parser for the IRC protocol, fixed to work with P10 protocol.
 
 =head1 SYNOPSIS
 
-  my $filter = POE::Filter::IRC::Hybrid->new();
+  my $filter = POE::Filter::CTCP::P10->new();
   my @events = @{$filter->get( [ @lines ] )};
   my @msgs = @{$filter->put( [ @messages ] )};
 
 =head1 DESCRIPTION
 
-POE::Filter::CTCP::Hybrid converts normal text into thoroughly CTCP-quoted
+POE::Filter::CTCP::P10 converts normal text into thoroughly CTCP-quoted
 messages, and transmogrifies CTCP-quoted messages into their normal,
 sane components. Rather what you'd expect a filter to do.
 
@@ -240,37 +239,39 @@ DCC protocol! Anyhow, enough ranting. Onto the rest of the docs...
 
 =over
 
-=item *
+=item new
 
-new
+Creates a new POE::Filter::CTCP::P10 object. Duh. :-)   Takes no arguments.
 
-Creates a new POE::Filter::CTCP::Hybrid object. Duh. :-)   Takes no arguments.
-
-=item *
-
-get
+=item get
 
 Takes an array reference containing one or more lines of CTCP-quoted
 text. Returns an array reference of processed, pasteurized events.
 
-=item *
-
-put
+=item put
 
 Takes an array reference of CTCP messages to be properly quoted. This
 doesn't support CTCPs embedded in normal messages, which is a
 brain-dead hack in the protocol, so do it yourself if you really need
 it. Returns an array reference of the quoted lines for sending.
 
+=item debug
+
+Enables or disables debugging information.
+
 =back
 
 =head1 AUTHOR
 
 Dennis "fimmtiu" Taylor, E<lt>dennis@funkplanet.comE<gt>.
-Hacked for Hybrid by Chris Williams, E<lt>chris@bingosnet.co.ukE<gt>.
+
+Hacked for P10 by Chris "BinGOs" Williams E<lt>chris@bingosnet.co.ukE<gt>
 
 =head1 SEE ALSO
 
-The documentation for POE and POE::Component::IRC.
+The documentation for POE and POE::Component::IRC and POE::Component::IRC::Service.
+
+P10 Specification - http://www.xs4all.nl/~carlo17/irc/P10.html
+                    http://www.xs4all.nl/~beware3/irc/bewarep10.html
 
 =cut
