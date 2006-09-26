@@ -55,6 +55,8 @@ sub new {
         croak "Second argument to POE::Component::IRC::Service::P10::new() must be a hash reference";
   }
   
+  warn "This module has now been deprecated by POE::Component::Server::IRC\n";
+
   $hash->{EventMode} = 1 unless ( defined ( $hash->{EventMode} ) and $hash->{EventMode} == 0 );
 
   $hash->{Reconnect} = 0 unless ( defined ( $hash->{Reconnect} ) and $hash->{Reconnect} == 1 );

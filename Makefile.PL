@@ -1,5 +1,5 @@
-use ExtUtils::MakeMaker;
-
+#use ExtUtils::MakeMaker;
+use inc::Module::Install;
 print <<NOTICE;
 
 \a--------------------------------------------------------------------------------
@@ -15,13 +15,16 @@ have a nice day >:)
 
 NOTICE
 
+license 'perl';
+author 'Chris Williams <chris@bingosnet.co.uk>';
+
 WriteMakefile(
 			  'NAME'	=> 'POE::Component::IRC::Service',
 			  'PREREQ_PM' => {
-							  'POE'    => 0.06_07,
-							  'Carp'   => 0,
-							  'Socket' => 0,
-							 },
+					  'POE'    => 0.06_07,
+					  'Carp'   => 0,
+					  'Socket' => 0,
+					 },
 			  'VERSION_FROM' => 'lib/POE/Component/IRC/Service.pm',
 			  'dist' => { 'COMPRESS' => 'gzip --best' },
 			 );

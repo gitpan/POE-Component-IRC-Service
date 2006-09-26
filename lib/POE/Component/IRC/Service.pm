@@ -16,7 +16,7 @@ use POE::Component::IRC::Service::Hybrid;
 use Carp;
 use vars qw($VERSION);
 
-$VERSION = '0.99';
+$VERSION = '0.991';
 
 sub new {
   my ($package,$alias,$ircdtype) = splice @_, 0, 3;
