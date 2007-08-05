@@ -1,15 +1,22 @@
-author: 'Chris Williams <chris@bingosnet.co.uk>'
+--- 
+abstract: A fully event driven IRC Services module
+author: Chris Williams <chris@bingosnet.co.uk>
+build_requires: 
+  Test::More: 0.47
 distribution_type: module
-generated_by: Module::Install version 0.64
+generated_by: Module::Install version 0.67
 license: perl
+meta-spec: 
+  url: http://module-build.sourceforge.net/META-spec-v1.3.html
+  version: 1.3
 module_name: POE::Component::IRC::Service
 name: POE-Component-IRC-Service
-no_index:
-  directory:
+no_index: 
+  directory: 
     - inc
     - t
-requires:
+requires: 
   Carp: 0
   POE: 0.0607
   Socket: 0
-version: 0.991
+version: 0.992

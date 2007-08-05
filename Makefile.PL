@@ -17,6 +17,8 @@ NOTICE
 
 license 'perl';
 author 'Chris Williams <chris@bingosnet.co.uk>';
+abstract 'A fully event driven IRC Services module';
+build_requires 'Test::More' => 0.47;
 
 WriteMakefile(
 			  'NAME'	=> 'POE::Component::IRC::Service',
