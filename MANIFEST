@@ -7,7 +7,6 @@ inc/Module/Install/Base.pm
 inc/Module/Install/Makefile.pm
 inc/Module/Install/MakeMaker.pm
 inc/Module/Install/Metadata.pm
-install
 lib/POE/Component/IRC/Service.pm
 lib/POE/Component/IRC/Service/Hybrid.pm
 lib/POE/Component/IRC/Service/P10.pm

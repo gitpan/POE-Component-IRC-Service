@@ -1,10 +1,11 @@
 --- 
 abstract: A fully event driven IRC Services module
-author: Chris Williams <chris@bingosnet.co.uk>
+author: 
+  - Chris Williams <chris@bingosnet.co.uk>
 build_requires: 
   Test::More: 0.47
 distribution_type: module
-generated_by: Module::Install version 0.67
+generated_by: Module::Install version 0.68
 license: perl
 meta-spec: 
   url: http://module-build.sourceforge.net/META-spec-v1.3.html
@@ -19,4 +20,4 @@ requires:
   Carp: 0
   POE: 0.0607
   Socket: 0
-version: 0.992
+version: 0.993

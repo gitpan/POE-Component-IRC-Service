@@ -16,11 +16,11 @@ use POE::Component::IRC::Service::Hybrid;
 use Carp;
 use vars qw($VERSION);
 
-$VERSION = '0.992';
+$VERSION = '0.993';
 
 sub new {
   my ($package,$alias,$ircdtype) = splice @_, 0, 3;
-  my ($object);
+  my $object;
 
   unless ($alias and $ircdtype) {
     croak "Not enough arguments to POE::Component::IRC::Service::new()";
