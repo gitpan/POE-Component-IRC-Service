@@ -2393,6 +2393,14 @@ Chris Williams, E<lt>chris@bingosnet.co.uk<gt>
 Based on a hell of lot of POE::Component::IRC written by
 Dennis Taylor, E<lt>dennis@funkplanet.comE<gt>
 
+=head1 LICENSE
+
+Copyright (c) Dennis Taylor and Chris Williams.
+
+This module may be used, modified, and distributed under the same
+terms as Perl itself. Please see the license that came with your Perl
+distribution for details.
+
 =head1 MAD PROPS
 
 Greatest of debts to Dennis Taylor, E<lt>dennis@funkplanet.comE<gt> for

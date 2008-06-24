@@ -14,6 +14,7 @@ lib/POE/Filter/CTCP/Hybrid.pm
 lib/POE/Filter/CTCP/P10.pm
 lib/POE/Filter/IRC/Hybrid.pm
 lib/POE/Filter/IRC/P10.pm
+LICENSE
 Makefile.PL
 MANIFEST
 META.yml

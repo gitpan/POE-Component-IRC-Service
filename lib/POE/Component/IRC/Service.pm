@@ -16,7 +16,7 @@ use POE::Component::IRC::Service::Hybrid;
 use Carp;
 use vars qw($VERSION);
 
-$VERSION = '0.993';
+$VERSION = '0.994';
 
 sub new {
   my ($package,$alias,$ircdtype) = splice @_, 0, 3;
@@ -84,6 +84,14 @@ Returns a brand new shiny IRC Service object.
 =head1 AUTHOR
 
 Chris Williams, E<lt>chris@bingosnet.co.ukE<gt>
+
+=head1 LICENSE
+
+Copyright (c) Dennis Taylor and Chris Williams.
+
+This module may be used, modified, and distributed under the same
+terms as Perl itself. Please see the license that came with your Perl
+distribution for details.
 
 =head1 MAD PROPS
 
