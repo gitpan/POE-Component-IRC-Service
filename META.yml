@@ -3,25 +3,46 @@ abstract: 'A fully event driven IRC Services module'
 author:
   - 'Chris Williams <chris@bingosnet.co.uk>'
 build_requires:
+  ExtUtils::MakeMaker: 6.42
   Test::More: 0.47
 configure_requires:
-  ExtUtils::MakeMaker: 6.44
+  ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 0.75'
+generated_by: 'Module::Install version 0.93'
 license: perl
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.3.html
-  version: 1.3
-module_name: POE::Component::IRC::Service
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
 name: POE-Component-IRC-Service
 no_index:
   directory:
+    - examples
     - inc
     - t
-    - examples
-    - examples
+provides:
+  POE::Component::IRC::Service:
+    file: lib/POE/Component/IRC/Service.pm
+    version: 0.996
+  POE::Component::IRC::Service::Hybrid:
+    file: lib/POE/Component/IRC/Service/Hybrid.pm
+    version: 0.996
+  POE::Component::IRC::Service::P10:
+    file: lib/POE/Component/IRC/Service/P10.pm
+    version: 0.996
+  POE::Filter::CTCP::Hybrid:
+    file: lib/POE/Filter/CTCP/Hybrid.pm
+  POE::Filter::CTCP::P10:
+    file: lib/POE/Filter/CTCP/P10.pm
+  POE::Filter::IRC::Hybrid:
+    file: lib/POE/Filter/IRC/Hybrid.pm
+    version: 0.996
+  POE::Filter::IRC::P10:
+    file: lib/POE/Filter/IRC/P10.pm
+    version: 0.996
 requires:
-  Carp: 0
   POE: 0.0607
-  Socket: 0
-version: 0.994
+resources:
+  homepage: http://github.com/bingos/poe-component-irc-service/tree
+  license: http://dev.perl.org/licenses/
+  repository: git://github.com/bingos/poe-component-irc-service.git
+version: 0.996
